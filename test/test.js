@@ -436,7 +436,7 @@ describe('Preset function - presetHandler.js file', () => {
       result = getNeighborPads(4, 3, 5);
       expect(result).to.include.something.that.deep.equals([4, 4]);
       expect(result).to.include.something.that.deep.equals([3, 3]);
-      expect(result).to.include.something.that.deep.equals([4, 4]);
+      expect(result).to.include.something.that.deep.equals([4, 2]);
       expect(result.length).to.equal(3);
       result = getNeighborPads(0, 1, 5);
       expect(result).to.include.something.that.deep.equals([0, 0]);

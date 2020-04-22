@@ -66,10 +66,20 @@ function invert(arrayName) {
 function getNeighborPads(x, y, size) {
     const neighborPads = [];
 
-    if (x < 0 || y < 0 || size <= Math.max(x, y)) {
+    if (x < 0 || y < 0 || x >= size || y >= size || size < 1) {
         return neighborPads;
     }
 
+    neighborPads.push([x - 1, y]);
+    neighborPads.push([x, y - 1]);
+    neighborPads.push([x + 1, y]);
+    neighborPads.push([x, y + 1]);
 
-    return neighborPads;
+    return neighborPads.filter((neighbor) => {
+        return neighbor.every((val) => {
+            return val >= 0 && val < size;            
+        })
+    });    
+
 }
+
