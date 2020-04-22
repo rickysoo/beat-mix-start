@@ -20,15 +20,13 @@ function getArrayByName(arrayName) {
 }
 
 function toggleDrum(arrayName, index) {
-
-
     if (arrayName === undefined || index === undefined) {
         return;
     }
 
     array = getArrayByName(arrayName);
 
-    if (arrayName === undefined || index < 0 || index > array.length) {
+    if (arrayName === undefined || index < 0 || index >= array.length) {
         return;
     }
 
@@ -65,6 +63,13 @@ function invert(arrayName) {
     }
 }
 
-// console.log(`Before: ${kicks}`);
-// toggleDrum('kicks', 0);
-// console.log(`After: ${kicks}`);
+function getNeighborPads(x, y, size) {
+    const neighborPads = [];
+
+    if (x < 0 || y < 0 || size <= Math.max(x, y)) {
+        return neighborPads;
+    }
+
+
+    return neighborPads;
+}
